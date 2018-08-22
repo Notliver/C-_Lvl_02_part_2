@@ -68,6 +68,10 @@ namespace Lvl_2_part_2.Control
                     EmpCommands.getInstance().Employees.Where(e => e.Department == obj as Department).Count() == 0));       
         
 
+        /// <summary>
+        /// Значение для многопользовательской базы
+        /// </summary>
+        /// <returns></returns>
         public static DepCommands getInstance()
         {
             if (example == null)
@@ -91,6 +95,10 @@ namespace Lvl_2_part_2.Control
             }
         }
 
+
+        /// <summary>
+        /// Событие на изменение значения
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "") 
             =>  PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));

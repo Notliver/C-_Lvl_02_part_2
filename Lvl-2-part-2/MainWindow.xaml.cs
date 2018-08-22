@@ -30,6 +30,10 @@ namespace Lvl_2_part_2
             DataContext = EmpCommands.getInstance();
         }
 
+        /// <summary>
+        /// Базовая логика открытия окна(взял из инета)
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
         private void OpenWindow<T>()
             where T : Window, new()
         {
@@ -59,11 +63,21 @@ namespace Lvl_2_part_2
             }
         }
 
+        /// <summary>
+        /// Открываем окном со списком департаментов
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void openWindowWAdjustmentDep_Click(object sender, RoutedEventArgs e)
         {
             OpenWindow<WAdjustmentDep>();
         }
 
+        /// <summary>
+        /// Открываем окно для редактирования сотрудника
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void openWindowWAdjustment_Click(object sender, RoutedEventArgs e)
         {
             OpenWindow<WAdjustment>();
@@ -82,6 +96,11 @@ namespace Lvl_2_part_2
                 
         }
 
+        /// <summary>
+        /// Метод для завершения приложения
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();

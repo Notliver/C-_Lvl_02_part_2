@@ -25,6 +25,10 @@ namespace Lvl_2_part_2.Classes
                 OnPropertyChanged("Name");
             }
         }
+
+        /// <summary>
+        /// Создаем список сотрудников
+        /// </summary>
         public List<Employee> Employees
         {
             get => EmpCommands.getInstance().Employees.Where(e => e.Department == this).ToList();
@@ -42,9 +46,10 @@ namespace Lvl_2_part_2.Classes
             }
         }
 
-
+        /// <summary>
+        /// Событие на изменение значения
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-
         public void OnPropertyChanged([CallerMemberName] string property = "") 
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
     }

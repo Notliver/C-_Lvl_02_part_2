@@ -17,6 +17,10 @@ namespace Lvl_2_part_2.Control
         private static EmpCommands example;
         private static object syncRoot = new Object();
 
+
+        /// <summary>
+        /// Получаем/присваиваем сотрудника
+        /// </summary>
         public ObservableCollection<Employee> Employees { get; set; }
         public Employee SelectedEmployee
         {
@@ -28,6 +32,9 @@ namespace Lvl_2_part_2.Control
             }
         }
 
+        /// <summary>
+        /// Описывает логику добавления сотрудника
+        /// </summary>
         private RelayCommand addCommand;
         public RelayCommand AddCommand => addCommand ??
                     (addCommand = new RelayCommand(obj =>
@@ -37,6 +44,9 @@ namespace Lvl_2_part_2.Control
                         SelectedEmployee = employee;
                     }));
 
+        /// <summary>
+        /// Описываем логику удаления сотрудника
+        /// </summary>
         private RelayCommand deleteCommand;
         public RelayCommand DeleteCommand => deleteCommand ??
                 (deleteCommand = new RelayCommand(obj =>
@@ -55,22 +65,32 @@ namespace Lvl_2_part_2.Control
                 },
                 (obj) => Employees.Count > 0));
 
+        /// <summary>
+        /// Создаем коллекцию сотрудников
+        /// </summary>
         protected EmpCommands()
         {
             Employees = new ObservableCollection<Employee>();
             var departments = DepCommands.getInstance();
             for (int i = 0; i < 10; i++)
             {
-                Employees.Add(new Employee("Family " + i, " Name " + i, "Patrynomic " + i, departments.Departments[+i]));
+                Employees.Add(new Employee("Фамилия " + i, " Имя " + i, "Отчество " + i, departments.Departments[+i]));
             }
         }
 
+        /// <summary>
+        /// Событие на изменение значения
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
 
+        /// <summary>
+        /// Значение для многопользовательской базы
+        /// </summary>
+        /// <returns></returns>
         public static EmpCommands getInstance()
         {
             if (example == null)
