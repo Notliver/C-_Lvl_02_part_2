@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Lvl_2_part_2.Classes
 {
-    class Department : INotifyPropertyChanged
+    class Department :Control.DepCommands, INotifyPropertyChanged
     {
         private string _name;
 
