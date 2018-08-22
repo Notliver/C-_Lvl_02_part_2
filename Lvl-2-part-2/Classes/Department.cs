@@ -8,39 +8,40 @@ using System.Threading.Tasks;
 
 namespace Lvl_2_part_2.Classes
 {
-    class Department :Control.DepCommands, INotifyPropertyChanged
+    class Department : INotifyPropertyChanged
     {
         private string _name;
 
-
         /// <summary>
-        /// Создание департамента
+        /// Присваиваем имя
         /// </summary>
         public string Name
         {
-            get => _name;
-            set => _name = value;
+            get { return _name; }
+            set
+            {
+                _name = value;
+                OnPropertyChanged("Name");
+            }
         }
 
 
         /// <summary>
-        /// Проверяем название на соответствие правилам создания
+        /// Создаем и проверяем название на соответствие правилам создания
         /// </summary>
-        /// <param name="name"></param>
-        public void CheckExistNameOfDepartment(string name)
+        /// <param _name="_name"></param>
+        public Department(string _name)
         {
-            if(CheckExeption.CheckExeption.CheckCorrectString(name, out string tmp))
+            if(CheckExeption.CheckExeption.CheckCorrectString(_name, out string res))
             {
-                Name = tmp;
+                Name = res;
             }
         }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged([CallerMemberName] string property = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-        }
+        public void OnPropertyChanged([CallerMemberName] string property = "") 
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
     }
 }

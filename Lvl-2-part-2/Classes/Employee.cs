@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lvl_2_part_2.Control;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -7,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace Lvl_2_part_2.Classes
 {
-    class Employee: Control.DepCommands
+    class Employee
     {
         private string _family;
         private string _name;
-        private string _petrynomic;
+        private string _patrynomic;
 
-        public Department Department { get; set }
+        public Department Department { get; set; }
 
-        public ObservableCollection<Department> Departments {  get => }
+        public ObservableCollection<Department> Departments { get => DepCommands.getInstance().Departments; }
 
         public string Family
         {
@@ -29,10 +30,25 @@ namespace Lvl_2_part_2.Classes
             set => CheckExeption.CheckExeption.CheckCorrectString(value, out _name);
         }
 
-        public string Petrynomic
+        public string Patrynomic
         {
-            get => _petrynomic;
-            set => CheckExeption.CheckExeption.CheckCorrectString(value,out _petrynomic);
+            get => _patrynomic;
+            set => CheckExeption.CheckExeption.CheckCorrectString(value,out _patrynomic);
+        }
+
+        public Employee(string _family, string _name, string _patrynomic)
+        {
+            Family = _family;
+            Name = _name;
+            Patrynomic = _patrynomic;
+        }
+
+        public Employee(string _family, string _name, string _patrynomic, Department department): this(_family,_name,_patrynomic)
+        {
+            if(Departments.Contains(department))
+            {
+                Department = department;
+            }
         }
     }
 }

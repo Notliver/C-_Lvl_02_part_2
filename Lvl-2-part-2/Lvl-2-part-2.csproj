@@ -54,6 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Windows\WAdjustment.xaml.cs">
+      <DependentUpon>WAdjustment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WAdjustmentDep.xaml.cs">
+      <DependentUpon>WAdjustmentDep.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,12 +72,20 @@
     <Compile Include="CheckExeption\RelayCommand.cs" />
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Employee.cs" />
-    <Compile Include="Control\EplCommands.cs" />
+    <Compile Include="Control\EmpCommands.cs" />
     <Compile Include="Control\DepCommands.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\WAdjustment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WAdjustmentDep.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

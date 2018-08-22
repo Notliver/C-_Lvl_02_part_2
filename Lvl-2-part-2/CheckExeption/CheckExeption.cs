@@ -16,7 +16,7 @@ namespace Lvl_2_part_2.CheckExeption
         /// <returns></returns>
         public static bool CheckCorrectString(string str, out string result)
         {
-            if (str is null || str is "" )
+            if (str == null || str == "" )
             {
                 throw new ArgumentException("Неверный формат");
             } else

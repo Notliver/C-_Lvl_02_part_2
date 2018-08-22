@@ -5,29 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lvl_2_part_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Сотрудники" Height="450" Width="800">
     <Grid Margin="0,0,3.333,-0.333">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <ListBox HorizontalAlignment="Center" Margin="10,0,9.667,0" VerticalAlignment="Center">
-            <ListView Height="401" Width="498" SelectionChanged="ListView_SelectionChanged">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Фамилия"/>
-                        <GridViewColumn Header="Имя"/>
-                        <GridViewColumn Header="Отчество"/>
-                        <GridViewColumn Header="Департамент"/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </ListBox>
+        <ListView
+                x:Name="listEmployees"
+                Margin="5"
+                ItemsSource="{Binding Employees}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn 
+                        Header="Фамилия" 
+                        Width="120" 
+                        DisplayMemberBinding="{Binding Path=Family, UpdateSourceTrigger=PropertyChanged}" />
+                    <GridViewColumn 
+                        Header="Имя" 
+                        Width="120" 
+                        DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" />
+                    <GridViewColumn 
+                        Header="Отчество" Width="120" 
+                        DisplayMemberBinding="{Binding Path=Patrynomic, UpdateSourceTrigger=PropertyChanged}" />
+                    <GridViewColumn 
+                        Header="Департамент" 
+                        Width="120" 
+                        DisplayMemberBinding="{Binding Path=Department.Name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+
         <StackPanel Grid.Column="1" HorizontalAlignment="Center">
-            <Button Content="Добавить сотрудника" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top" Width="156"/>
-            <Button Content="Добавить департамент" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top" Width="156"/>
-            <Button Content="Редактировать сотрудника" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top" Width="156"/>
-            <Button Content="Выход" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Top" Width="156"/>
+            <Button 
+                Name="AdjEmp"
+                Content="Редактировать сотрудников" 
+                HorizontalAlignment="Center" 
+                Margin="10" 
+                VerticalAlignment="Top" 
+                Width="180"
+                Click="openWindowWAdjustment_Click"/>
+            <Button 
+                Name="AdjDep" 
+                Content="Редактировать департаменты" 
+                HorizontalAlignment="Center" 
+                Margin="10" 
+                VerticalAlignment="Top" 
+                Width="180"
+                Click="openWindowWAdjustmentDep_Click"/>
+            <Button 
+                Name="Delete"
+                Content="Удалить список" 
+                HorizontalAlignment="Center" 
+                Margin="10" 
+                VerticalAlignment="Top" 
+                Width="180"
+                Click="DeleteAll"/>
+            <Button 
+                Name="Exit"
+                Content="Выход" 
+                HorizontalAlignment="Center" 
+                Margin="10" 
+                VerticalAlignment="Top" 
+                Width="180"
+                Command="{Binding Exit}"/>
         </StackPanel>
     </Grid>
 </Window>
