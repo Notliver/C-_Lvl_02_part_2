@@ -1,0 +1,15 @@
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\bin\Debug\Lvl-2-part-2.exe.config
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\bin\Debug\Lvl-2-part-2.exe
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\bin\Debug\Lvl-2-part-2.pdb
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\Lvl-2-part-2.csprojAssemblyReference.cache
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\MainWindow.g.cs
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\App.g.cs
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\Lvl-2-part-2_MarkupCompile.cache
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\Lvl-2-part-2_MarkupCompile.lref
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\MainWindow.baml
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\Lvl-2-part-2.g.resources
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\Lvl_2_part_2.Properties.Resources.resources
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\Lvl-2-part-2.csproj.GenerateResource.cache
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\Lvl-2-part-2.csproj.CoreCompileInputs.cache
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\Lvl-2-part-2.exe
+C:\Users\Seller\source\repos\Lvl-2-part-2\Lvl-2-part-2\obj\Debug\Lvl-2-part-2.pdb
