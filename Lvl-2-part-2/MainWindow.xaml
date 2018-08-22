@@ -14,7 +14,8 @@
         <ListView
                 x:Name="listEmployees"
                 Margin="5"
-                ItemsSource="{Binding Employees}">
+                ItemsSource="{Binding Employees}"
+                SelectedItem="{Binding SelectedEmployee}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn 
@@ -38,6 +39,14 @@
         
 
         <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+            <Button 
+                Name="AddEmp"
+                Content="Добавить сотрудника" 
+                HorizontalAlignment="Center" 
+                Margin="10" 
+                VerticalAlignment="Top" 
+                Width="180"
+                Command="{Binding AddCommand}"/>
             <Button 
                 Name="AdjEmp"
                 Content="Редактировать сотрудников" 
@@ -69,7 +78,7 @@
                 Margin="10" 
                 VerticalAlignment="Top" 
                 Width="180"
-                Command="{Binding Exit}"/>
+                Click="Exit_Click"/>
         </StackPanel>
     </Grid>
 </Window>

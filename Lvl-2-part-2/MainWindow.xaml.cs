@@ -72,6 +72,7 @@ namespace Lvl_2_part_2
         /// <summary>
         /// Метод должен очищать лист
         /// Но не нашел еще варианта реализации
+        /// По идее надо пробежаться по листу и присвоить null
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -79,6 +80,11 @@ namespace Lvl_2_part_2
         {
             
                 
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

@@ -37,26 +37,20 @@ namespace Lvl_2_part_2.Control
         /// Описывает логику добавления департаментов
         /// </summary>
         private RelayCommand addCommand;
-        public RelayCommand AddCommand
-        {
-            get
-            {
-                return addCommand ??
+        public RelayCommand AddCommand => addCommand ??
                     (addCommand = new RelayCommand(obj =>
                     {
                         Department department = new Department("Департамент");
                         Departments.Add(department);
                         SelectedDepartment = department;
                     }));
-            }
-        }
 
         /// <summary>
         /// Описываем логику удаления департамента
         /// </summary>
-        private RelayCommand deleteDepartment;
-        public RelayCommand DeleteDepartment => deleteDepartment ??
-                    (deleteDepartment = new RelayCommand(obj =>
+        private RelayCommand deletecommand;
+        public RelayCommand DeleteCommand => deletecommand ??
+                    (deletecommand = new RelayCommand(obj =>
                     {
                         Department department = obj as Department;
                         if (department != null)
@@ -71,7 +65,9 @@ namespace Lvl_2_part_2.Control
                         }
                     },
                     (obj) => Departments.Count > 0 && 
-                    EmpCommands.getInstance().Employees.Where(e => e.Department == obj as Department).Count() == 0));                    
+                    EmpCommands.getInstance().Employees.Where(e => e.Department == obj as Department).Count() == 0));       
+        
+
         public static DepCommands getInstance()
         {
             if (example == null)

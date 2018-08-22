@@ -5,70 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lvl_2_part_2.Windows"
         mc:Ignorable="d"
-        Title="Изменение сотрудника" Height="350" Width="800">
+        Title="Редактирование работника" Height="100" Width="500">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition Height="0.4*"/>
-            </Grid.RowDefinitions>
-            <ListView
-                x:Name="listEmployees"
-                Margin="5"
-                ItemsSource="{Binding Employees}"               
-                SelectedItem="{Binding SelectedEmployee}">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn 
-                        Header="Фамилия" 
-                        Width="120" 
-                        DisplayMemberBinding="{Binding Path=Family, UpdateSourceTrigger=PropertyChanged}" />
-                        <GridViewColumn 
-                        Header="Имя" 
-                        Width="120" 
-                        DisplayMemberBinding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" />
-                        <GridViewColumn 
-                        Header="Отчество" Width="120" 
-                        DisplayMemberBinding="{Binding Path=Patrynomic, UpdateSourceTrigger=PropertyChanged}" />
-                        <GridViewColumn 
-                        Header="Департамент" 
-                        Width="120" 
-                        DisplayMemberBinding="{Binding Path=Department.Name}" />
-                    </GridView>
-                </ListView.View>
-            </ListView>
-
-
-
-            <StackPanel Grid.Row="2">
                 <StackPanel Orientation="Horizontal" 
                     DataContext="{Binding SelectedEmployee}"
                     Margin="10 0">
 
                     <TextBox 
                         MinWidth="100"
+                        MaxHeight="30"
                         x:Name="family"
                         Margin="10"
                         Text="{Binding Family, UpdateSourceTrigger=PropertyChanged}" />
                     <TextBox
                         MinWidth="100"
+                        MaxHeight="30"
                         x:Name="name"
                         Margin="10"
                         Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
                     <TextBox 
                         MinWidth="100"
+                        MaxHeight="30"
                         x:Name="patrynomic"
                         Margin="10"
                         Text="{Binding Patrynomic, UpdateSourceTrigger=PropertyChanged}" />
 
                     <ComboBox
                         MinWidth="100"
+                        MaxHeight="30"
                         x:Name="listDepartments"
                         SelectedItem = "{Binding Department}"
                         Margin="10" SelectionChanged="listDepartments_SelectionChanged">
@@ -79,33 +43,5 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
                 </StackPanel>
-            </StackPanel>
-            <Label 
-                Content="Редактирование работника" 
-                FontSize="20"
-                HorizontalAlignment="Center" 
-                Margin="10" 
-                Grid.Row="1" 
-                VerticalAlignment="Center"/>
-        </Grid>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
-            <Button 
-                Name="AddEmp"
-                Content="Добавить сотрудника" 
-                HorizontalAlignment="Center" 
-                Margin="10" 
-                VerticalAlignment="Top" 
-                Width="180"
-                Command="{Binding AddCommand}"/>
-            <Button 
-                Name="DelEmp" 
-                Content="Удалить сотрудника" 
-                HorizontalAlignment="Center" 
-                Margin="10" 
-                VerticalAlignment="Top" 
-                Width="180"
-                Command="{Binding DeleteCommand}"
-                CommandParameter="{Binding SelectedEmployee}"/>
-        </StackPanel>
     </Grid>
 </Window>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Lvl_2_part_2.Control;
 
 namespace Lvl_2_part_2.Classes
 {
@@ -24,7 +25,10 @@ namespace Lvl_2_part_2.Classes
                 OnPropertyChanged("Name");
             }
         }
-
+        public List<Employee> Employees
+        {
+            get => EmpCommands.getInstance().Employees.Where(e => e.Department == this).ToList();
+        }
 
         /// <summary>
         /// Создаем и проверяем название на соответствие правилам создания

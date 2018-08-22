@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Lvl_2_part_2.Classes;
+using Lvl_2_part_2.Control;
 
 namespace Lvl_2_part_2.Windows
 {
@@ -22,6 +24,7 @@ namespace Lvl_2_part_2.Windows
         public WAdjustmentDep()
         {
             InitializeComponent();
+            DataContext = DepCommands.getInstance();
         }
     }
 }
