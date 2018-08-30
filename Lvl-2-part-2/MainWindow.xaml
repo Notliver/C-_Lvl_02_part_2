@@ -53,32 +53,28 @@
                 HorizontalAlignment="Center" 
                 Margin="10" 
                 VerticalAlignment="Top" 
-                Width="180"
-                Click="openWindowWAdjustment_Click"/>
+                Width="180"/>
             <Button 
                 Name="AdjDep" 
                 Content="Редактировать департаменты" 
                 HorizontalAlignment="Center" 
                 Margin="10" 
                 VerticalAlignment="Top" 
-                Width="180"
-                Click="openWindowWAdjustmentDep_Click"/>
+                Width="180"/>
             <Button 
                 Name="Delete"
                 Content="Удалить список" 
                 HorizontalAlignment="Center" 
                 Margin="10" 
                 VerticalAlignment="Top" 
-                Width="180"
-                Click="DeleteAll"/>
+                Width="180"/>
             <Button 
                 Name="Exit"
                 Content="Выход" 
                 HorizontalAlignment="Center" 
                 Margin="10" 
                 VerticalAlignment="Top" 
-                Width="180"
-                Click="Exit_Click"/>
+                Width="180"/>
         </StackPanel>
     </Grid>
 </Window>

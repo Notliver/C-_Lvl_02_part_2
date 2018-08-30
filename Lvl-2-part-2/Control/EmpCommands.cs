@@ -32,6 +32,11 @@ namespace Lvl_2_part_2.Control
             }
         }
 
+        public void Clear()
+        {
+            Employees.Clear();
+        }
+
         /// <summary>
         /// Описывает логику добавления сотрудника
         /// </summary>

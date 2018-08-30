@@ -26,8 +26,13 @@ namespace Lvl_2_part_2
     {
         public MainWindow()
         {
+            EmpCommands data = EmpCommands.getInstance();
             InitializeComponent();
-            DataContext = EmpCommands.getInstance();
+            DataContext = data;
+            AdjEmp.Click += (s, e) => OpenWindow<WAdjustment>();
+            AdjDep.Click += (s, e) => OpenWindow<WAdjustmentDep>();
+            Delete.Click += delegate { data.Clear(); };
+            Exit.Click += (s, e) => Application.Current.Shutdown();
         }
 
         /// <summary>
@@ -61,49 +66,6 @@ namespace Lvl_2_part_2
                     obj.Focus();
                 }
             }
-        }
-
-        /// <summary>
-        /// Открываем окном со списком департаментов
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void openWindowWAdjustmentDep_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWindow<WAdjustmentDep>();
-        }
-
-        /// <summary>
-        /// Открываем окно для редактирования сотрудника
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void openWindowWAdjustment_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWindow<WAdjustment>();
-        }
-
-        /// <summary>
-        /// Метод должен очищать лист
-        /// Но не нашел еще варианта реализации
-        /// По идее надо пробежаться по листу и присвоить null
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void DeleteAll(object sender, RoutedEventArgs e)
-        {
-            
-                
-        }
-
-        /// <summary>
-        /// Метод для завершения приложения
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-            System.Windows.Application.Current.Shutdown();
         }
     }
 }
