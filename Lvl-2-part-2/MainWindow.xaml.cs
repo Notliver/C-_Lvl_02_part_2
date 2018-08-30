@@ -16,6 +16,9 @@ using System.Windows.Shapes;
 using Lvl_2_part_2.Classes;
 using Lvl_2_part_2.Windows;
 using System.ComponentModel;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Lvl_2_part_2
 {
@@ -26,8 +29,31 @@ namespace Lvl_2_part_2
     {
         public MainWindow()
         {
-            EmpCommands data = EmpCommands.getInstance();
             InitializeComponent();
+            var connectionString =
+            ConfigurationManager.ConnectionStrings["DBEmployeesConnection"].ConnectionString;
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            SqlCommand command = new SqlCommand(
+                "SELECT Last name, First name, Patronymic, Department FROM DBEmplouees", connection);
+
+            adapter.SelectCommand = command;
+
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+
+            EmployeesDataGrid.DataContext = dataTable.DefaultView;
+
+
+
+
+
+
+            EmpCommands data = EmpCommands.getInstance();
+
             DataContext = data;
             AdjEmp.Click += (s, e) => OpenWindow<WAdjustment>();
             AdjDep.Click += (s, e) => OpenWindow<WAdjustmentDep>();

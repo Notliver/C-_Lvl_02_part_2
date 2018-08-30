@@ -11,7 +11,22 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <ListView
+        <DataGrid Name="EmployeesDataGrid" AutoGenerateColumns="False"
+                  ItemsSource="{Binding}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="idColumn" Binding="{Binding ID}"
+                                    Header="Персональный номер" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn x:Name="LNColumn" Binding="{Binding Last name}"
+                                    Header="Фамилия" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn x:Name="FNColumn" Binding="{Binding First name}"
+                                    Header="Имя" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn x:Name="PatrCollumn" Binding="{Binding Patronymic}"
+                                    Header="Отчество" IsReadOnly="True" Width="Auto"/>
+                <DataGridTextColumn x:Name="DepColumn" Binding="{Binding Department}"
+                                    Header="Департамент" IsReadOnly="True" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--<ListView
                 x:Name="listEmployees"
                 Margin="5"
                 ItemsSource="{Binding Employees}"
@@ -35,7 +50,7 @@
                         DisplayMemberBinding="{Binding Path=Department.Name}" />
                 </GridView>
             </ListView.View>
-        </ListView>
+        </ListView>-->
         
 
         <StackPanel Grid.Column="1" HorizontalAlignment="Center">
